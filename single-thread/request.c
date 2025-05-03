@@ -3,20 +3,6 @@
 
 #define MAXBUF (8192)
 
-// below default values are defined in 'request.h'
-int num_threads = DEFAULT_THREADS;
-int buffer_max_size = DEFAULT_BUFFER_SIZE;
-int scheduling_algo = DEFAULT_SCHED_ALGO;	
-
-//
-//	TODO: add code to create and manage the shared global buffer of requests
-//	HINT: You will need synchronization primitives.
-//		pthread_mutuex_t lock_var is a viable option.
-//
-
-//
-// Sends out HTTP response in case of errors
-//
 void request_error(int fd, char *cause, char *errnum, char *shortmsg, char *longmsg) {
     char buf[MAXBUF], body[MAXBUF];
     
@@ -24,7 +10,7 @@ void request_error(int fd, char *cause, char *errnum, char *shortmsg, char *long
     sprintf(body, ""
 	    "<!doctype html>\r\n"
 	    "<head>\r\n"
-	    "  <title>CYB-3053 WebServer Error</title>\r\n"
+	    "  <title>OSTEP WebServer Error</title>\r\n"
 	    "</head>\r\n"
 	    "<body>\r\n"
 	    "  <h2>%s: %s</h2>\r\n" 
@@ -44,9 +30,6 @@ void request_error(int fd, char *cause, char *errnum, char *shortmsg, char *long
     
     // Write out the body last
     write_or_die(fd, body, strlen(body));
-    
-    // close the socket connection
-    close_or_die(fd);
 }
 
 //
@@ -57,36 +40,37 @@ void request_read_headers(int fd) {
     
     readline_or_die(fd, buf, MAXBUF);
     while (strcmp(buf, "\r\n")) {
-	readline_or_die(fd, buf, MAXBUF);
+		readline_or_die(fd, buf, MAXBUF);
     }
     return;
 }
 
 //
-// Return 1 if static, 0 if dynamic content (executable file)
+// Return 1 if static, 0 if dynamic content
 // Calculates filename (and cgiargs, for dynamic) from uri
+//
 int request_parse_uri(char *uri, char *filename, char *cgiargs) {
     char *ptr;
     
     if (!strstr(uri, "cgi")) { 
-	// static
-	strcpy(cgiargs, "");
-	sprintf(filename, ".%s", uri);
-	if (uri[strlen(uri)-1] == '/') {
-	    strcat(filename, "index.html");
+		// static
+		strcpy(cgiargs, "");
+		sprintf(filename, ".%s", uri);
+		if (uri[strlen(uri)-1] == '/') {
+			strcat(filename, "index.html");
 	}
 	return 1;
     } else { 
-	// dynamic
-	ptr = index(uri, '?');
-	if (ptr) {
-	    strcpy(cgiargs, ptr+1);
-	    *ptr = '\0';
-	} else {
-	    strcpy(cgiargs, "");
-	}
-	sprintf(filename, ".%s", uri);
-	return 0;
+		// dynamic
+		ptr = index(uri, '?');
+		if (ptr) {
+			strcpy(cgiargs, ptr+1);
+			*ptr = '\0';
+		} else {
+			strcpy(cgiargs, "");
+		}
+		sprintf(filename, ".%s", uri);
+		return 0;
     }
 }
 
@@ -95,18 +79,16 @@ int request_parse_uri(char *uri, char *filename, char *cgiargs) {
 //
 void request_get_filetype(char *filename, char *filetype) {
     if (strstr(filename, ".html")) 
-	strcpy(filetype, "text/html");
+		strcpy(filetype, "text/html");
     else if (strstr(filename, ".gif")) 
-	strcpy(filetype, "image/gif");
+		strcpy(filetype, "image/gif");
     else if (strstr(filename, ".jpg")) 
-	strcpy(filetype, "image/jpeg");
+		strcpy(filetype, "image/jpeg");
     else 
-	strcpy(filetype, "text/plain");
+		strcpy(filetype, "text/plain");
 }
 
-//
-// Handles requests for static content
-//
+
 void request_serve_static(int fd, char *filename, int filesize) {
     int srcfd;
     char *srcp, filetype[MAXBUF], buf[MAXBUF];
@@ -126,7 +108,7 @@ void request_serve_static(int fd, char *filename, int filesize) {
 	    "Content-Length: %d\r\n"
 	    "Content-Type: %s\r\n\r\n", 
 	    filesize, filetype);
-       
+    
     write_or_die(fd, buf, strlen(buf));
     
     //  Writes out to the client socket the memory-mapped file 
@@ -134,56 +116,37 @@ void request_serve_static(int fd, char *filename, int filesize) {
     munmap_or_die(srcp, filesize);
 }
 
-//
-// Fetches the requests from the buffer and handles them (thread logic)
-//
-void* thread_request_serve_static(void* arg)
-{
-    // TODO: write code to actualy respond to HTTP requests
-    // Pull from global buffer of requests
-}
-
-//
-// Initial handling of the request
-//
+// handle a request
 void request_handle(int fd) {
     int is_static;
     struct stat sbuf;
     char buf[MAXBUF], method[MAXBUF], uri[MAXBUF], version[MAXBUF];
     char filename[MAXBUF], cgiargs[MAXBUF];
     
-    // get the request type, file path and HTTP version
     readline_or_die(fd, buf, MAXBUF);
     sscanf(buf, "%s %s %s", method, uri, version);
     printf("method:%s uri:%s version:%s\n", method, uri, version);
-
-    // verify if the request type is GET or not
+    
     if (strcasecmp(method, "GET")) {
-	request_error(fd, method, "501", "Not Implemented", "server does not implement this method");
-	return;
+		request_error(fd, method, "501", "Not Implemented", "server does not implement this method");
+		return;
     }
     request_read_headers(fd);
     
-    // check requested content type (static/dynamic)
     is_static = request_parse_uri(uri, filename, cgiargs);
-    
-    // get some data regarding the requested file, also check if requested file is present on server
     if (stat(filename, &sbuf) < 0) {
-	request_error(fd, filename, "404", "Not found", "server could not find this file");
-	return;
+		request_error(fd, filename, "404", "Not found", "server could not find this file");
+		return;
     }
     
-    // verify if requested content is static
     if (is_static) {
-	if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR & sbuf.st_mode)) {
-		request_error(fd, filename, "403", "Forbidden", "server could not read this file");
-		return;
-	}
-    
-	// TODO: directory traversal mitigation	
-	// TODO: write code to add HTTP requests in the buffer
-
+		if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR & sbuf.st_mode)) {
+			request_error(fd, filename, "403", "Forbidden", "server could not read this file");
+			return;
+		}
+		request_serve_static(fd, filename, sbuf.st_size);
     } else {
-	request_error(fd, filename, "501", "Not Implemented", "server does not serve dynamic content request");
+		request_error(fd, filename, "501", "Not Implemented", "server does not serve dynamic content request");
+		return;
     }
 }
