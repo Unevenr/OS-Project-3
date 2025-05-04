@@ -248,16 +248,20 @@ void request_handle(int fd) {
     // verify if requested content is static
     if (is_static) 
     {
+    
+        // TODO: directory traversal mitigation	
+        if (strstr(filename, "..") != NULL)
+        {
+            request_error(fd, filename, "403", "Forbidden", "Nice try lil bro (attempted directory traversal detected)");
+            return;
+        }    
+
         if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR & sbuf.st_mode)) {
             request_error(fd, filename, "403", "Forbidden", "server could not read this file");
             return;
         }
         
-        // TODO: directory traversal mitigation	
-        if (strstr(filename, "..") != NULL)
-        {
-            request_error(fd, filename, "403", "Forbidden", "Nice try lil bro (attempted directory traversal detected)");
-        }
+
 
 	    // TODO: write code to add HTTP requests in the buffer
         buffer_add(fd, filename, sbuf.st_size);
