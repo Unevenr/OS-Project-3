@@ -1,6 +1,7 @@
 #include "io_helper.h"
 #include "request.h"
 
+
 #define MAXBUF (8192)
 
 // below default values are defined in 'request.h'
@@ -12,6 +13,24 @@ int scheduling_algo = DEFAULT_SCHED_ALGO;
 //	TODO: add code to create and manage the shared global buffer of requests
 //	HINT: You will need synchronization primitives.
 //		pthread_mutuex_t lock_var is a viable option.
+typedef struct 
+{
+    int fd;
+    char filename[MAXBUF];
+    int filesize;
+} request_t;
+
+static request_t *buffer;
+static int buffer_head = 0;
+static int buffer_tail = 0;
+static int buffer_count = 0;
+
+static pthread_mutex_t buffer_lock = PTHREAD_MUTEX_INITALIZER;
+static pthread_cond_t buffer_not_empty = PTHREAD_COND_INITALIZER;
+static pthread_mutex_t buffer_not_full = PTHREAD_MUTEX_INITALIZER;
+
+
+
 //
 
 //
@@ -181,6 +200,8 @@ void request_handle(int fd) {
 	}
     
 	// TODO: directory traversal mitigation	
+
+
 	// TODO: write code to add HTTP requests in the buffer
 
     } else {
