@@ -217,6 +217,11 @@ void request_handle(int fd) {
     struct stat sbuf;
     char buf[MAXBUF], method[MAXBUF], uri[MAXBUF], version[MAXBUF];
     char filename[MAXBUF], cgiargs[MAXBUF];
+
+    if (buffer == NULL)
+    {
+        buffer = malloc(sizeof(request_t) * buffer_max_size);
+    }
     
     // get the request type, file path and HTTP version
     readline_or_die(fd, buf, MAXBUF);
@@ -254,8 +259,8 @@ void request_handle(int fd) {
             request_error(fd, filename, "403", "Forbidden", "Nice try lil bro (attempted directory traversal detected)");
         }
 
-	// TODO: write code to add HTTP requests in the buffer
-
+	    // TODO: write code to add HTTP requests in the buffer
+        buffer_add(fd, filename, sbuf.st_size);
     } 
     else 
     {
