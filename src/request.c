@@ -42,6 +42,8 @@ void buffer_add(int fd, char *filename, int filesize)
     strcpy(buffer[buffer_tail].filename, filename);
     buffer[buffer_tail].filesize = filesize;
 
+    printf("[+] Added request: %s (fd=%d, size=%d)\n", filename, fd, filesize);
+
     buffer_tail = (buffer_tail + 1) % buffer_max_size;
     buffer_count++;
 
@@ -59,6 +61,9 @@ request_t buffer_remove()
     }
 
     request_t request = buffer[buffer_head];
+
+    printf("[-] Removed request: %s (fd=%d, size=%d)\n", request.filename, request.fd, request.filesize);
+
     buffer_head = (buffer_head + 1) % buffer_max_size;
     buffer_count--;
 
@@ -195,6 +200,13 @@ void* thread_request_serve_static(void* arg)
 {
     // TODO: write code to actualy respond to HTTP requests
     // Pull from global buffer of requests
+    while (1)
+    {
+        request_t request = buffer_remove();
+        request_serve_static(request.fd, request.filename, request.filesize);
+        close_or_die(request.fd);
+    }
+    return NULL;
 }
 
 //
@@ -229,18 +241,24 @@ void request_handle(int fd) {
     }
     
     // verify if requested content is static
-    if (is_static) {
-	if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR & sbuf.st_mode)) {
-		request_error(fd, filename, "403", "Forbidden", "server could not read this file");
-		return;
-	}
-    
-	// TODO: directory traversal mitigation	
-
+    if (is_static) 
+    {
+        if (!(S_ISREG(sbuf.st_mode)) || !(S_IRUSR & sbuf.st_mode)) {
+            request_error(fd, filename, "403", "Forbidden", "server could not read this file");
+            return;
+        }
+        
+        // TODO: directory traversal mitigation	
+        if (strstr(filename, "..") != NULL)
+        {
+            request_error(fd, filename, "403", "Forbidden", "Nice try lil bro (attempted directory traversal detected)");
+        }
 
 	// TODO: write code to add HTTP requests in the buffer
 
-    } else {
+    } 
+    else 
+    {
 	request_error(fd, filename, "501", "Not Implemented", "server does not serve dynamic content request");
     }
 }
