@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3
+CMAKE_SOURCE_DIR = /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build
+CMAKE_BINARY_DIR = /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/client.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/wclient.c.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/wclient.c.o: ../src/wclient.c
 CMakeFiles/client.dir/src/wclient.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/src/wclient.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/src/wclient.c.o -MF CMakeFiles/client.dir/src/wclient.c.o.d -o CMakeFiles/client.dir/src/wclient.c.o -c /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wclient.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/src/wclient.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/src/wclient.c.o -MF CMakeFiles/client.dir/src/wclient.c.o.d -o CMakeFiles/client.dir/src/wclient.c.o -c /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wclient.c
 
 CMakeFiles/client.dir/src/wclient.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/src/wclient.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wclient.c > CMakeFiles/client.dir/src/wclient.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wclient.c > CMakeFiles/client.dir/src/wclient.c.i
 
 CMakeFiles/client.dir/src/wclient.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/src/wclient.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wclient.c -o CMakeFiles/client.dir/src/wclient.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wclient.c -o CMakeFiles/client.dir/src/wclient.c.s
 
 CMakeFiles/client.dir/src/io_helper.c.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/io_helper.c.o: ../src/io_helper.c
 CMakeFiles/client.dir/src/io_helper.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/src/io_helper.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/src/io_helper.c.o -MF CMakeFiles/client.dir/src/io_helper.c.o.d -o CMakeFiles/client.dir/src/io_helper.c.o -c /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/src/io_helper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/src/io_helper.c.o -MF CMakeFiles/client.dir/src/io_helper.c.o.d -o CMakeFiles/client.dir/src/io_helper.c.o -c /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c
 
 CMakeFiles/client.dir/src/io_helper.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/src/io_helper.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c > CMakeFiles/client.dir/src/io_helper.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c > CMakeFiles/client.dir/src/io_helper.c.i
 
 CMakeFiles/client.dir/src/io_helper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/src/io_helper.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c -o CMakeFiles/client.dir/src/io_helper.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c -o CMakeFiles/client.dir/src/io_helper.c.s
 
 CMakeFiles/client.dir/src/request.c.o: CMakeFiles/client.dir/flags.make
 CMakeFiles/client.dir/src/request.c.o: ../src/request.c
 CMakeFiles/client.dir/src/request.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/client.dir/src/request.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/src/request.c.o -MF CMakeFiles/client.dir/src/request.c.o.d -o CMakeFiles/client.dir/src/request.c.o -c /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/client.dir/src/request.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/src/request.c.o -MF CMakeFiles/client.dir/src/request.c.o.d -o CMakeFiles/client.dir/src/request.c.o -c /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c
 
 CMakeFiles/client.dir/src/request.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/src/request.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c > CMakeFiles/client.dir/src/request.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c > CMakeFiles/client.dir/src/request.c.i
 
 CMakeFiles/client.dir/src/request.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/src/request.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c -o CMakeFiles/client.dir/src/request.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c -o CMakeFiles/client.dir/src/request.c.s
 
 # Object files for target client
 client_OBJECTS = \
@@ -125,7 +125,7 @@ client: CMakeFiles/client.dir/src/io_helper.c.o
 client: CMakeFiles/client.dir/src/request.c.o
 client: CMakeFiles/client.dir/build.make
 client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +137,6 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 CMakeFiles/client.dir/depend:
-	cd /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/client.dir/depend
 

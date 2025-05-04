@@ -221,6 +221,7 @@ void request_handle(int fd) {
     // check requested content type (static/dynamic)
     is_static = request_parse_uri(uri, filename, cgiargs);
     
+    printf("Looking for file: %s\n", filename);
     // get some data regarding the requested file, also check if requested file is present on server
     if (stat(filename, &sbuf) < 0) {
 	request_error(fd, filename, "404", "Not found", "server could not find this file");
