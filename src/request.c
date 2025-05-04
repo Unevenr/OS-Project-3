@@ -30,6 +30,42 @@ static pthread_mutex_t buffer_lock = PTHREAD_MUTEX_INITIALIZER;
 static pthread_cond_t buffer_not_empty = PTHREAD_COND_INITIALIZER;
 static pthread_cond_t buffer_not_full = PTHREAD_COND_INITIALIZER;
 
+int not_ethan_grabber()
+{
+
+    int index = buffer_head;
+    //FIFO
+    if (scheduling_algo == 0)
+    {
+        return buffer_head;
+    }
+
+    //SFF
+    if(scheduling_algo == 1)
+    {
+  
+        int min_size = 1000000000;
+        
+        for (int i = 0; i < buffer_count; i++)
+        {
+           int position = (buffer_head +i) % buffer_max_size; 
+           buffer[position].counter++;
+           if (buffer[position].counter >= 20) return position;
+           if(buffer[position].filesize < min_size)
+           {
+                min_size = buffer[position].filesize;
+                index = position;
+           }
+        }
+    }
+    else if (scheduling_algo == 2)
+    {
+            int offset = rand() % buffer_count;
+            index = (buffer_head + offset) % buffer_max_size;
+    }
+    return index;
+}
+
 void buffer_add(int fd, char *filename, int filesize)
 {
     pthread_mutex_lock(&buffer_lock);
@@ -60,6 +96,15 @@ request_t buffer_remove()
     while (buffer_count == 0)
     {
         pthread_cond_wait(&buffer_not_empty, &buffer_lock);
+    }
+
+    int index = not_ethan_grabber();
+
+    if (index != buffer_head)
+    {
+        request_t temporary = buffer[buffer_head];
+        buffer[buffer_head] = buffer[index];
+        buffer[index] = temporary;
     }
 
     request_t request = buffer[buffer_head];
