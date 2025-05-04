@@ -18,6 +18,7 @@ typedef struct
     int fd;
     char filename[MAXBUF];
     int filesize;
+    int counter;
 } request_t;
 
 static request_t *buffer;
@@ -41,6 +42,7 @@ void buffer_add(int fd, char *filename, int filesize)
     buffer[buffer_tail].fd = fd;
     strcpy(buffer[buffer_tail].filename, filename);
     buffer[buffer_tail].filesize = filesize;
+    buffer[buffer_tail].counter = 0;
 
     printf("[+] Added request: %s (fd=%d, size=%d)\n", filename, fd, filesize);
 
