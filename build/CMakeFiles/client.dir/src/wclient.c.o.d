@@ -1,7 +1,7 @@
 CMakeFiles/client.dir/src/wclient.c.o: \
- /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wclient.c \
+ /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wclient.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.h \
+ /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.h \
  /usr/include/arpa/inet.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \

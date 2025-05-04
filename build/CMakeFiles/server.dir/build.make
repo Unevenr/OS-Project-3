@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3
+CMAKE_SOURCE_DIR = /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build
+CMAKE_BINARY_DIR = /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/server.dir/depend.make
@@ -72,44 +72,44 @@ include CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/wserver.c.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/wserver.c.o: ../src/wserver.c
 CMakeFiles/server.dir/src/wserver.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/server.dir/src/wserver.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/src/wserver.c.o -MF CMakeFiles/server.dir/src/wserver.c.o.d -o CMakeFiles/server.dir/src/wserver.c.o -c /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wserver.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/server.dir/src/wserver.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/src/wserver.c.o -MF CMakeFiles/server.dir/src/wserver.c.o.d -o CMakeFiles/server.dir/src/wserver.c.o -c /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wserver.c
 
 CMakeFiles/server.dir/src/wserver.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/src/wserver.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wserver.c > CMakeFiles/server.dir/src/wserver.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wserver.c > CMakeFiles/server.dir/src/wserver.c.i
 
 CMakeFiles/server.dir/src/wserver.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/src/wserver.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wserver.c -o CMakeFiles/server.dir/src/wserver.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wserver.c -o CMakeFiles/server.dir/src/wserver.c.s
 
 CMakeFiles/server.dir/src/io_helper.c.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/io_helper.c.o: ../src/io_helper.c
 CMakeFiles/server.dir/src/io_helper.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/server.dir/src/io_helper.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/src/io_helper.c.o -MF CMakeFiles/server.dir/src/io_helper.c.o.d -o CMakeFiles/server.dir/src/io_helper.c.o -c /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/server.dir/src/io_helper.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/src/io_helper.c.o -MF CMakeFiles/server.dir/src/io_helper.c.o.d -o CMakeFiles/server.dir/src/io_helper.c.o -c /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c
 
 CMakeFiles/server.dir/src/io_helper.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/src/io_helper.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c > CMakeFiles/server.dir/src/io_helper.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c > CMakeFiles/server.dir/src/io_helper.c.i
 
 CMakeFiles/server.dir/src/io_helper.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/src/io_helper.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c -o CMakeFiles/server.dir/src/io_helper.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c -o CMakeFiles/server.dir/src/io_helper.c.s
 
 CMakeFiles/server.dir/src/request.c.o: CMakeFiles/server.dir/flags.make
 CMakeFiles/server.dir/src/request.c.o: ../src/request.c
 CMakeFiles/server.dir/src/request.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/server.dir/src/request.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/src/request.c.o -MF CMakeFiles/server.dir/src/request.c.o.d -o CMakeFiles/server.dir/src/request.c.o -c /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/server.dir/src/request.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/src/request.c.o -MF CMakeFiles/server.dir/src/request.c.o.d -o CMakeFiles/server.dir/src/request.c.o -c /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c
 
 CMakeFiles/server.dir/src/request.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/src/request.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c > CMakeFiles/server.dir/src/request.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c > CMakeFiles/server.dir/src/request.c.i
 
 CMakeFiles/server.dir/src/request.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/src/request.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c -o CMakeFiles/server.dir/src/request.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c -o CMakeFiles/server.dir/src/request.c.s
 
 # Object files for target server
 server_OBJECTS = \
@@ -125,7 +125,7 @@ server: CMakeFiles/server.dir/src/io_helper.c.o
 server: CMakeFiles/server.dir/src/request.c.o
 server: CMakeFiles/server.dir/build.make
 server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -137,6 +137,6 @@ CMakeFiles/server.dir/clean:
 .PHONY : CMakeFiles/server.dir/clean
 
 CMakeFiles/server.dir/depend:
-	cd /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3 /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/server.dir/depend
 

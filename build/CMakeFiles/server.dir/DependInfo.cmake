@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.c" "CMakeFiles/server.dir/src/io_helper.c.o" "gcc" "CMakeFiles/server.dir/src/io_helper.c.o.d"
-  "/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c" "CMakeFiles/server.dir/src/request.c.o" "gcc" "CMakeFiles/server.dir/src/request.c.o.d"
-  "/mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/wserver.c" "CMakeFiles/server.dir/src/wserver.c.o" "gcc" "CMakeFiles/server.dir/src/wserver.c.o.d"
+  "/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.c" "CMakeFiles/server.dir/src/io_helper.c.o" "gcc" "CMakeFiles/server.dir/src/io_helper.c.o.d"
+  "/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c" "CMakeFiles/server.dir/src/request.c.o" "gcc" "CMakeFiles/server.dir/src/request.c.o.d"
+  "/mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/wserver.c" "CMakeFiles/server.dir/src/wserver.c.o" "gcc" "CMakeFiles/server.dir/src/wserver.c.o.d"
   )
 
 # Targets to which this target links.

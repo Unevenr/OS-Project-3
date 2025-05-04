@@ -25,13 +25,48 @@ static int buffer_head = 0;
 static int buffer_tail = 0;
 static int buffer_count = 0;
 
-static pthread_mutex_t buffer_lock = PTHREAD_MUTEX_INITALIZER;
-static pthread_cond_t buffer_not_empty = PTHREAD_COND_INITALIZER;
-static pthread_mutex_t buffer_not_full = PTHREAD_MUTEX_INITALIZER;
+static pthread_mutex_t buffer_lock = PTHREAD_MUTEX_INITIALIZER;
+static pthread_cond_t buffer_not_empty = PTHREAD_COND_INITIALIZER;
+static pthread_cond_t buffer_not_full = PTHREAD_COND_INITIALIZER;
 
+void buffer_add(int fd, char *filename, int filesize)
+{
+    pthread_mutex_lock(&buffer_lock);
 
+    while (buffer_count == buffer_max_size)
+    {
+        pthread_cond_wait(&buffer_not_full, &buffer_lock);
+    }
 
-//
+    buffer[buffer_tail].fd = fd;
+    strcpy(buffer[buffer_tail].filename, filename);
+    buffer[buffer_tail].filesize = filesize;
+
+    buffer_tail = (buffer_tail + 1) % buffer_max_size;
+    buffer_count++;
+
+    pthread_cond_signal(&buffer_not_empty);
+    pthread_mutex_unlock(&buffer_lock);
+}
+
+request_t buffer_remove()
+{
+    pthread_mutex_lock(&buffer_lock);
+
+    while (buffer_count == 0)
+    {
+        pthread_cond_wait(&buffer_not_empty, &buffer_lock);
+    }
+
+    request_t request = buffer[buffer_head];
+    buffer_head = (buffer_head + 1) % buffer_max_size;
+    buffer_count--;
+
+    pthread_cond_signal(&buffer_not_full);
+    pthread_mutex_unlock(&buffer_lock);
+
+    return request;
+}
 
 //
 // Sends out HTTP response in case of errors

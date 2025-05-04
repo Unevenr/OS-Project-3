@@ -1,7 +1,7 @@
 CMakeFiles/server.dir/src/request.c.o: \
- /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.c \
+ /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.c \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/io_helper.h \
+ /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/io_helper.h \
  /usr/include/arpa/inet.h /usr/include/features.h \
  /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -134,4 +134,4 @@ CMakeFiles/server.dir/src/request.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h \
  /usr/include/x86_64-linux-gnu/bits/pthread_stack_min.h \
- /mnt/c/Users/kellu/OneDrive/Documents/GitHub/OS-Project-3/src/request.h
+ /mnt/c/Users/kellu/onedrive/Documents/GitHub/OS-Project-3/src/request.h
