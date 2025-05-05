@@ -251,16 +251,16 @@ void* thread_request_serve_static(void* arg)
     printf ("Thread %lu started.\n", pthread_self());
 
     //SFF test
-    pthread_mutex_lock(&buffer_lock);
-    while (buffer_count < 3) {
-        // printf("Thread %lu waiting for buffer to fill...\n", pthread_self());
-        pthread_mutex_unlock(&buffer_lock);
-        sched_yield();  // Let other threads/clients run
+    // pthread_mutex_lock(&buffer_lock);
+    // while (buffer_count < 3) {
+    //     // printf("Thread %lu waiting for buffer to fill...\n", pthread_self());
+    //     pthread_mutex_unlock(&buffer_lock);
+    //     sched_yield();  // Let other threads/clients run
 
-        pthread_mutex_lock(&buffer_lock);
-    }
+    //     pthread_mutex_lock(&buffer_lock);
+    // }
     printf("Thread %lu started work\n", pthread_self());
-    pthread_mutex_unlock(&buffer_lock);
+    // pthread_mutex_unlock(&buffer_lock);
 
 
     while (1)
