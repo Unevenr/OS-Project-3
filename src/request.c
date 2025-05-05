@@ -63,6 +63,7 @@ int not_ethan_grabber()
             int offset = rand() % buffer_count;
             index = (buffer_head + offset) % buffer_max_size;
     }
+
     return index;
 }
 
@@ -247,9 +248,27 @@ void* thread_request_serve_static(void* arg)
 {
     // TODO: write code to actualy respond to HTTP requests
     // Pull from global buffer of requests
+    printf ("Thread %lu started.\n", pthread_self());
+
+    //SFF test
+    pthread_mutex_lock(&buffer_lock);
+    while (buffer_count < 3) {
+        // printf("Thread %lu waiting for buffer to fill...\n", pthread_self());
+        pthread_mutex_unlock(&buffer_lock);
+        sched_yield();  // Let other threads/clients run
+
+        pthread_mutex_lock(&buffer_lock);
+    }
+    printf("Thread %lu started work\n", pthread_self());
+    pthread_mutex_unlock(&buffer_lock);
+
+
     while (1)
     {
         request_t request = buffer_remove();
+
+        printf ("Thread %lu handing request for %s\n", pthread_self(), request.filename);
+
         request_serve_static(request.fd, request.filename, request.filesize);
         close_or_die(request.fd);
     }
