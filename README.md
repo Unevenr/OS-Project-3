@@ -1,9 +1,9 @@
 #  Project 03 for the University of Tulsa's CYB-3053: Operating Systems Concept
 
-## Classmates that helped:
+## Classmates That Helped:
 Ethan was the main source of help
 
-## Honorable mentions:
+## Honorable Mentions:
 Trinyon and Luke
 
 ## NOTE:
